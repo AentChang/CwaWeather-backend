@@ -131,7 +131,7 @@ app.get("/", (req, res) => {
   res.json({
     message: "歡迎使用 CWA 天氣預報 API",
     endpoints: {
-      kaohsiung: "/api/weather/tainanㄙㄟ",
+      kaohsiung: "/api/weather/tainan",
       health: "/api/health",
     },
   });
@@ -141,8 +141,8 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "OK", timestamp: new Date().toISOString() });
 });
 
-// 取得高雄天氣預報
-app.get("/api/weather/kaohsiung", getKaohsiungWeather);
+// 取得台南天氣預報
+app.get("/api/weather/tainan", getKaohsiungWeather);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
